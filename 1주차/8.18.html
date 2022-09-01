@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset='usf-8'/>
+
+      <title>15강 미션 - 황호조</title>
+
+  <style>
+      #ti{
+        font-size:100px;
+        color:white;
+        background-color:orange;
+        text-shadow:2px 2px black;
+        text-align:center;
+      }
+      #as{
+        font-size: 25px;
+        text-align: center;
+        border: dotted;
+        width:1000px;
+        height:500px;
+        position:relative;
+
+      }
+
+/*아이템 제목구간*/
+      .name1{
+      font-size:20px;
+      color:white;
+      background-color:red;
+      width:250px;
+      height:400px;
+      text-shadow:2px 2px black;
+      text-align:center;
+      float:left;
+      display: inline;
+      position:absolute;
+      left:15px;
+      border:solid;
+      border-color: black;
+
+      }
+
+      .name2{
+        font-size:20px;
+        color:white;
+        background-color:orange;
+        width:250px;
+        height:400px;
+        text-shadow:2px 2px black;
+        text-align:center;
+        float:left;
+        display: inline;
+        position:absolute;
+        left:375px;
+        border:solid;
+        border-color: black;
+      }
+      .name3{
+      font-size:20px;
+      color:white;
+      background-color:green;
+      width:250px;
+      height:400px;
+      text-shadow:2px 2px black;
+      text-align: center;
+      float:left;
+      position:absolute;
+      right:15px;
+      border:solid;
+      border-color: black;
+      }
+/*아이템 가격구간*/
+
+
+      }
+      /*아이템 이미지구간*/
+      img {
+        width:15%;
+        border: 1px solid black;
+    }
+
+      table, tr, td, th {border: 5px solid purple; }
+      table {
+        border-collapse : collapse;
+        width: 100%;
+              }
+      tr{
+        background-color:green;
+        }
+      th{
+        background-color:lightgrey;
+        border-spacing:10px;
+    }
+      td{
+        text-align:center;
+        vertical-align: center; height: 50px;}
+      td:hover { background-color: red;}
+	</style>
+
+
+  </style>
+
+
+            <script>
+            </script>
+
+          </head>
+
+          <body>
+            <div id = ti>황호조의 <br>상점</div>
+            <div id = as>놀랍다! <hr>
+            <div class = name1><i>용자의 분실된 가스조절기</i><hr><del>999,999,999</del> -> 999,999,998!!!</i>
+              <img src="https://cdnweb01.wikitree.co.kr/webdata/editor/202009/24/img_20200924161816_cd5954a5.webp"width=200px; height=180px;/>
+              <div> 3박4일간의 유격훈련 복귀 후 군장을 풀던 최병장은 자신의 소총에서 <mark>무언가</mark> 없어진걸 발견하는데..</div>
+            </div>
+            <div class = name2><i>별에닿는 진실의 깃털펜</i><hr><del>10,001</del> -><br>10,000!!!</i>
+
+              <img src="data:image/jpeg;base64,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" padding = 100px; width=200px; height=180px;/>
+              <div>일주일 전 담당구역을 청소하다 처리한 맞후임 김일병의 마편이 중대장의 손에서 펼쳐지는데...</div>
+            </div>
+            <div class = name3><i>참회와 윤회의 방</i><hr><del>888,888,888</del> -> 888,888,887!!!
+              <img src="data:image/jpeg;base64,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"width=200px; height=180px;/>
+              <div>무언가를 잃어버린 덕에 그곳에 가게된 최병장.그곳에서 상습구타로 전출간 전 맞선임을 만나게 되는데.. </div>
+            </div>
+          </div>
+          <tavle style="width:100px;">
+              <div><h1>세명 모두에게 공평한 무기를 고르세요</h1></div>
+              <select name="item">
+                <option value="a" selected> 몽둥이
+                <option value="b"> 신발
+          			<option value="c"> 모자
+          			<option value="d"> 발가락양말
+
+              </select>
+
+                <select name="item">
+                  <option value="a" selected> 몽둥이
+            			<option value="b"> 신발
+            			<option value="c"> 모자
+            			<option value="d"> 발가락양말
+                </select>
+
+              </select>
+
+                <select name="item">
+                  <option value="a" selected> 몽둥이
+                  <option value="b"> 신발
+                  <option value="c"> 모자
+                  <option value="d"> 발가락양말
+                </select>
+
+                  <h1>문장 입력</h1>
+              <p>마지막으로 남길말은?</p>
+              <form>
+                <textarea name="message" rows="1" cols="15">호에엥.</textarea>
+
+                <br><br>
+
+                <form action="">
+                		전송을 누르지마세요: <br>
+                		<input type="text" name="nickname" value="제발"><br><br>
+                		<input type="submit" value="전송">
+                	</form>
+
+                  <br><br>
+
+                <caption>군복의 구성</caqtion>
+                <table>
+                    <tr style=background-color:lightgray>
+                  </tr colspan>
+
+                  <th colspan = "3">군복</th colspan>
+                    <th>상의</th>
+                    <th>하의</th>
+
+                  </tr>
+
+
+                  <tr>
+                    <td>헬멧</td>
+                    <td>야상</td>
+                    <td>바지</td>
+
+                    <td>동복</td>
+                    <td>동복</td>
+
+                  </tr>
+                  <tr>
+                    <td>턱끈</td>
+                    <td>깔깔이</td>
+                    <td>고무링</td>
+
+                    <td>하복</td>
+                    <td>하복</td>
+
+
+                  </tr>
+
+                    <tr>
+
+                    </tr>
+                </table>
+                <br><br>
+              <table style =
+                  width: 100%;
+            			border-collapse: seperate;
+            			border-spacing: 20px 30px;
+            		>
+
+                <tr>
+                  <td>이것은</td>
+                  <td>공-백</td>
+                  <td>입니다</td>
+
+                </tr>
+              </table>
+
+
+          </body>
+
+  </html>
