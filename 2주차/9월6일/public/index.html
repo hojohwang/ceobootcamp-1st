@@ -31,7 +31,16 @@
              database.ref("msgs/"+date.getTime()).set(message);
              })
 
-          })
+             database.ref("msgs").on("value", (snapshot)=>{
+               $("#chatLIst").html("");
+              snapshot.forEach((child)=>{
+                $("#chatList").append("<div>"+child.val()+"</div>");
+
+              })
+
+             })
+
+          })//<-document ready꺼
 
 
     </script>
@@ -44,8 +53,9 @@
   <body>
     <input type="text" id="message" placeholder="메세지를 입력하세yo">
     <button id="timeRecord">데이터 전송</button>
-    <div>     돌겠다. </div>
+    <div>     돌겠다. </div><br>
 
+    <div id="chatList"></div>
   </body>
 
   <!-- $(document).ready(()=>{
