@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+
+    <script>
+      const firebaseConfig = {
+          apiKey: "AIzaSyDHdM4DClrRHopDoBiwbARB4GSfB8-qDCo",
+          authDomain: "ceohojocamp19970906try.firebaseapp.com",
+          databaseURL: "https://ceohojocamp19970906try-default-rtdb.firebaseio.com",
+          projectId: "ceohojocamp19970906try",
+          storageBucket: "ceohojocamp19970906try.appspot.com",
+          messagingSenderId: "505545795904",
+          appId: "1:505545795904:web:ac366634639c41963df2a5"
+        };
+
+          firebase.initializeApp(firebaseConfig);
+          let database = firebase.database();
+
+          $(document).ready(()=>{
+
+           $("#timeRecord").on("click", ()=>{
+             let date = new Date();
+             let message = $("#message").val();
+             database.ref("msgs/"+date.getTime()).set(message);
+             })
+
+          })
+
+
+    </script>
+
+
+    <head>
+
+  </head>
+
+  <body>
+    <input type="text" id="message" placeholder="메세지를 입력하세yo">
+    <button id="timeRecord">데이터 전송</button>
+    <div>     돌겠다. </div>
+
+  </body>
+
+  <!-- $(document).ready(()=>{
+
+   $("#timeRecord").on("click", ()=>{
+     let date = new Date();
+     database.ref("times").set(date.getTime());
+     }) -->
