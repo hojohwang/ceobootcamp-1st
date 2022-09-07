@@ -11,13 +11,6 @@ admin.initializeApp({
 
 let db = admin.database();
 
-
-
-
-
-
-
-
 exports.helloWorld = functions.https.onRequest((request, response) => {
   cors(request, response, ()=>{
     db.ref("msgs").on("value", (snapshot)=>{
@@ -25,3 +18,32 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
       });
     })
   });
+
+
+  exports.join = functions.https.onRequest((request, response) => {
+    cors(request, response, ()=>{
+      let id = request.body.id;
+      let pwd = request.body.pwd;
+      db.ref("members/"+id).set(pwd);
+      });
+    });
+
+    exports.login = functions.https.onRequest((request, response) => {
+      cors(request, response, ()=>{
+
+        let id = request.body.id;
+        let pwd = request.body.pwd;
+        db.ref("members/"+id).on("value", (snapshot)=>{
+          if(snapshot.val()){
+            if(snapshot.val() == pwd){
+              response.send({"result":"로그인 되었습니다."});
+            }else{
+              response.send({"result":"비밀번호가 일치하지 않습니다."});
+            }
+          }else{
+            response.send({"result":"가입되지 않은 회원입니다."});
+          }
+
+        });
+      });
+    });
