@@ -1,6 +1,7 @@
 const functions = require("firebase-functions");
-
 let admin = require("firebase-admin");
+const cors = require("cors")({origin:true});
+
 let serviceAccount = require("./ceohojocamp19970906try-firebase-adminsdk-2bhsg-5377da94fd");
 
 admin.initializeApp({
@@ -9,10 +10,8 @@ admin.initializeApp({
 });
 
 let db = admin.database();
-let ref = db.ref("restricted_access/secret_document");
-ref.once("value", function(snapshot) {
-  console.log(snapshot.val());
-});
+
+
 
 
 
@@ -20,7 +19,9 @@ ref.once("value", function(snapshot) {
 
 
 exports.helloWorld = functions.https.onRequest((request, response) => {
-  db.ref("msgs").on("value", (snapshot)=>{
-    response.send(snapshot.val());
-    });
+  cors(request, response, ()=>{
+    db.ref("msgs").on("value", (snapshot)=>{
+      response.send(snapshot.val());
+      });
+    })
   });

@@ -10,20 +10,24 @@
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
 
     <script>
-      const firebaseConfig = {
-          apiKey: "AIzaSyDHdM4DClrRHopDoBiwbARB4GSfB8-qDCo",
-          authDomain: "ceohojocamp19970906try.firebaseapp.com",
-          databaseURL: "https://ceohojocamp19970906try-default-rtdb.firebaseio.com",
-          projectId: "ceohojocamp19970906try",
-          storageBucket: "ceohojocamp19970906try.appspot.com",
-          messagingSenderId: "505545795904",
-          appId: "1:505545795904:web:ac366634639c41963df2a5"
-        };
-
-          firebase.initializeApp(firebaseConfig);
-          let database = firebase.database();
 
           $(document).ready(()=>{
+
+            $.ajax({
+                url: "https://us-central1-ceohojocamp19970906try.cloudfunctions.net/helloWorld", // 클라이언트가 요청을 보낼 서버의 URL 주소
+                type: "POST",                             // HTTP 요청 방식(GET, POST)
+                dataType: "json"                         // 서버에서 보내줄 데이터의 타입
+              })
+
+              .done(function(json) {
+              console.log(json);
+            })
+
+
+
+
+
+
 
           function sendMsg(){
             $("#timeRecord").on("click", ()=>{
