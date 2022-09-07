@@ -25,25 +25,22 @@
 
           $(document).ready(()=>{
 
-          function sendMsg(){
+
             $("#timeRecord").on("click", ()=>{
               let date = new Date();
               let message = $("#message").val();
               database.ref("msgs/"+date.getTime()).set(message);
               })
-          } // function ()
 
 
-             function loadMsgs(){
-               database.ref("msgs").on("value", (snapshot)=>{
-                 $("#chatList").html("");
-                snapshot.forEach((child)=>{
-                  $("#chatList").append("<div>"+child.val()+"</div>");
+             database.ref("msgs").on("value", (snapshot)=>{
+               $("#chatList").html("");
+              snapshot.forEach((child)=>{
+                $("#chatList").append("<div>"+child.val()+"</div>");
 
-                })
-               })
+              })
+             })
 
-             }//function ()
 
           })//<-document ready꺼
 
@@ -62,10 +59,3 @@
 
     <div id="chatList"></div>
   </body>
-
-  <!-- $(document).ready(()=>{
-
-   $("#timeRecord").on("click", ()=>{
-     let date = new Date();
-     database.ref("times").set(date.getTime());
-     }) -->
