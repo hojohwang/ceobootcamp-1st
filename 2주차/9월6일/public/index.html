@@ -14,6 +14,26 @@
 
           $(document).ready(()=>{
 
+            function fruitsCall(){
+                $.ajax({
+                  url: "http://13.125.251.149/", // 클라이언트가 요청을 보낼 서버의 URL 주소
+                  type: "POST",                             // HTTP 요청 방식(GET, POST)
+                  dataType: "json"                         // 서버에서 보내줄 데이터의 타입
+                })
+            .done(function(json) {
+
+              for(i=0; i<json.length; i++){
+                  alert(json[i]);
+              }
+            });
+          }
+
+            $("#getFruits").on("click", ()=>{
+              fruitsCall();
+            })
+
+
+
             function joinCall(){
               let idvalue = $("#idvalue").val();
               let pwdvalue = $("#pwdvalue").val();
@@ -66,6 +86,7 @@
 
     <button id="join">회원가입</button>
     <button id="login">로그인</button>
+    <button id="getFruits">과일가져오기</button>
 
 
     <div id="chatList"></div>
