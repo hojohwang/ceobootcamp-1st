@@ -21,10 +21,10 @@
                   dataType: "json"                         // 서버에서 보내줄 데이터의 타입
                 })
             .done(function(json) {
-
               for(i=0; i<json.length; i++){
-                  alert(json[i]);
+                $("#chatList").append("<div>"+json[i]['id']+"</div>");
               }
+
             });
           }
 
